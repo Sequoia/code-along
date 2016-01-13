@@ -1,0 +1,18 @@
+{
+  "name": "eventloop-illustration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Sequoia McDowell <sequoia.mcdowell@gmail.com> (http://sequoia.makes.software/)",
+  "license": "CC-BY-NC-SA-4.0",
+  "dependencies": {
+    "async": "^1.5.2",
+    "chalk": "^1.1.1",
+    "column": "0.0.2",
+    "lodash": "^3.10.1"
+  }
+}
