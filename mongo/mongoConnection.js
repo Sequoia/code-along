@@ -10,7 +10,7 @@ if(!process.env.hasOwnProperty('MONGOURI')){
 }
 
 //connect
-debug('attempting to connect to ', process.env.MONGOURI);
+debug('attempting to connect to ', process.env.MONGOURIm);
 mongoose.connect(process.env.MONGOURI);
 
 //get DB event emitter to handle connection events
@@ -28,4 +28,3 @@ db.on('error', function(e){
 db.once('open', function() {
   debug('mongo db connection successful');
 });
-
