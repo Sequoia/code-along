@@ -1,9 +1,8 @@
-//module.exports = test1;
 module.exports = createRecords;
 var Promise = require('bluebird');
 
 function createRecords(Restaurant, Dish){
-  Promise.map(getRestaurants(), function(obj){
+  return Promise.map(getRestaurants(), function(obj){
     return Restaurant.create(obj, { include : [ Dish ] });
   })
   .then(function(){
@@ -23,7 +22,7 @@ return [
       {name: 'Waffles', spicy:false}
     ]
   },
-  { name: 'Taco Gong Soma', founded:2011, Dishes: [
+  { name: 'Taco Gong', founded:2011, Dishes: [
       {name: 'Pancakes', spicy:false},
       {name: 'Tacos', spicy:true},
       {name: 'Chicken Enchilada', spicy:true},
@@ -33,7 +32,7 @@ return [
       {name: 'Ice Cream Tuesdae', spicy:false}
     ]
   },
-  { name: 'Friendly\'s', founded:1999, Dishes: [
+  { name: 'Unfriendly\'s', founded:1999, Dishes: [
       {name: 'Chicken & Waffles', spicy:true},
       {name: 'Ice Cream Sundae', spicy:false},
       {name: 'Tastee Conez', spicy:false},
@@ -48,7 +47,7 @@ return [
       {name: 'Ice Cream Tuesdae', spicy:false}
     ] 
   },
-  { name: 'Grey Castle', founded:192, Dishes: [
+  { name: 'Grey Castle', founded:1920, Dishes: [
       {name: 'General Tzo\'s Meatballs', spicy:true},
       {name: 'Pickled eggs', spicy:false},
       {name: 'Spicy Pickled eggs', spicy:true},

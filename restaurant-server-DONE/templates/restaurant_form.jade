@@ -1,0 +1,15 @@
+html
+  head
+    title 'Create Restaurant'
+    style
+      | label {
+      |   display: block;
+      | }
+  body
+    h1 Create Restaurant
+    form(action='/restaurants', method='POST')
+      label(for='name') Name:
+        input(type='text' name='name') 
+      label(for='founded') Date Founded:
+        input(type='number' name='founded') 
+      button Submit

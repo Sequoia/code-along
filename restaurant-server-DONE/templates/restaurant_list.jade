@@ -1,0 +1,9 @@
+html
+  head
+    title 'Our Restaurants'
+  body
+    h1 Our Restaurants
+    ul
+      each restaurant in restaurants
+        li
+          a(href='/restaurants/' + restaurant.id)= restaurant.name

@@ -1,6 +1,6 @@
 //// CONFIG /////
 var dbname = 'test2';
-var dbuser = 'root';
+var dbuser = 'root';https://strongloop.com/strongblog/build-real-time-apps-with-angular-liveset-and-loopback/
 var dbpass = '';
 var dbhost = 'localhost';
 var dbtype = 'mariadb';
@@ -33,9 +33,12 @@ Restaurant.hasMany(Dish);
 //force:true adds DROP TABLE to each definition, used for testing/demoing
 db.sync({force: true})
   .then(function(r){
-    console.log(r.models);
-    createDummyData(Restaurant, Dish);
+    //add some records
+    return createDummyData(Restaurant, Dish);
   });
 
 
-module.exports = Restaurant;
+module.exports = {
+  Restaurant : Restaurant,
+  Dish       : Dish
+};
