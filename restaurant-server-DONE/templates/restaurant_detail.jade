@@ -7,10 +7,12 @@ html
       | }
   body
     h1= name
-    h2 Founded #{founded}
+    p Founded #{founded}
 
-    h1 Dishes
+    h2 Dishes
     if Dishes
       ul
         each dish in Dishes
           li(class={spicy: dish.spicy})= dish.name
+    else
+      p No dishes
