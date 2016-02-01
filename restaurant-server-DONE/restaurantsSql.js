@@ -30,6 +30,21 @@ router.get('/', function getList(req, res, next){
     });
 });
 
+// GET single restaurant
+router.get('/:id', function getOne(req, res, next){
+  console.log('getting restaurants/' + req.params.id);
+
+  Restaurant
+    .find({
+      where: {id : req.params.id},
+      include: [ Dish ]
+    })
+    .then(function(result){
+      console.log(result.dishes);
+      res.render('restaurant_detail', result);
+    });
+});
+
 // GET new restaurant form
 router.get('/new', function restaurantForm(req, res, next){
   res.render('restaurant_form');
@@ -37,7 +52,7 @@ router.get('/new', function restaurantForm(req, res, next){
 
 // POST new restaurant
 router.post('/', function create(req, res, next){
-  console.log(req.body);
+  console.log('creating new restaurant' , req.body);
 
   //whitelist fields
   var newRestaurant = {
@@ -49,20 +64,6 @@ router.post('/', function create(req, res, next){
     .create(newRestaurant)
     .then(function(result){
       res.redirect('/restaurants/' + result.id);
-    });
-});
-
-// GET single restaurant
-router.get('/:id', function getOne(req, res, next){
-  console.log('getting restaurants/:id');
-  Restaurant
-    .find({
-      where: {id : req.params.id},
-      include: [ Dish ]
-    })
-    .then(function(result){
-      console.log(result.dishes);
-      res.render('restaurant_detail', result);
     });
 });
 

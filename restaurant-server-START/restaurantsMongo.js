@@ -21,27 +21,21 @@ dummyData = [
 // GET restaurants
 router.get('/', function getList(req, res, next){
   console.log('getting restaurants/');
-  Restaurant
-    .find().exec()
-    .then(function(results){
-      res.render('restaurant_list', {restaurants : results});
-    });
+  
+  var results = dummyData; //TODO get restaurants from DB
+
+  res.render('restaurant_list', {restaurants : results});
 });
 
 // GET single restaurant
 router.get('/:id', function getOne(req, res, next){
   console.log('getting restaurants/' + req.params.id);
 
-  Restaurant
-    .findOne({
-      _id : req.params.id
-    })
-    .exec()
-    .then(function(result){
-      console.log(result);
-      res.render('restaurant_detail', result);
-    });
+  var result = dummyData[0]; //TODO use req.params.id to fetch real DB record
+
+  res.render('restaurant_detail', result);
 });
+
 
 // GET new restaurant form
 router.get('/new', function restaurantForm(req, res, next){
@@ -58,9 +52,8 @@ router.post('/', function create(req, res, next){
     founded: req.body.founded
   };
   
-  Restaurant
-    .create(newRestaurant)
-    .then(function(result){
-      res.redirect('/restaurants/' + result._id);
-    });
+  dummyData.push(newRestaurant); //TODO save restaurant to DB
+  var newId = -1; //TODO get ID of new restaurant
+
+  res.redirect('/restaurants/' + newId);
 });
