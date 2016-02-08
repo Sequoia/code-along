@@ -1,6 +1,6 @@
 var app = require('express')();
-//var restaurantRouter = require('./restaurantsSql');
-var restaurantRouter = require('./restaurantsMongo');
+var restaurantRouter = require('./restaurantsSql');
+//var restaurantRouter = require('./restaurantsMongo');
 
 //config
 app.set('view engine', 'jade');

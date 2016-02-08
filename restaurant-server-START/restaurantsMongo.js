@@ -22,9 +22,7 @@ dummyData = [
 router.get('/', function getList(req, res, next){
   console.log('getting restaurants/');
   
-  var results = dummyData; //TODO get restaurants from DB
-
-  res.render('restaurant_list', {restaurants : results});
+  res.render('restaurant_list', {restaurants : dummyData}); //TODO get restaurants from DB
 });
 
 // GET single restaurant

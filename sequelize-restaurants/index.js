@@ -1,9 +1,9 @@
 //// CONFIG /////
 var dbname = 'test2';
-var dbuser = 'root';https://strongloop.com/strongblog/build-real-time-apps-with-angular-liveset-and-loopback/
+var dbuser = 'root';
 var dbpass = '';
 var dbhost = 'localhost';
-var dbtype = 'mariadb';
+var dbtype = 'mariadb';   //alias for 'mysql'
 ////CONFIG///////
 
 //connection setup
