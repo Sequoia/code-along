@@ -6,9 +6,13 @@ var startVal = 2;
 
 self(startVal, processSelfed);
 
-function processSelfed(err, selfed){ addOne(selfed, processSum); }
+function processSelfed(err, selfed){
+  addOne(selfed, processSum);
+}
 
-function processSum(err, oneAdded){ double(oneAdded, outputResults); } 
+function processSum(err, oneAdded){
+  double(oneAdded, outputResults);
+} 
 
 function outputResults(err, doubled){
   if(err){ return console.error(err); }

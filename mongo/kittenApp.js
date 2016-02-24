@@ -13,6 +13,8 @@ function run(){
     name: 'Kit-Kat 123'
   });
 
+  //kitkat.name = 'furball';
+
   //access data & methods
   debug(kitkat.name); // 'Kit-Kat'
   debug(kitkat.speak()); //'Meow my name is Kit-Kat'
@@ -53,7 +55,9 @@ function handleSave(response){
 
 function logKittens(kittens){
   kittens.forEach(function(kitten){
+    kitten.name = kitten.name + ' CHANGED!';
     debug('got kitten: ' + kitten);
+    return kitten.save();
   });
 }
 
