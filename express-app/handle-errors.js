@@ -14,7 +14,6 @@ app.get('/', function(req, res, next){ res.send('hello world!'); });
 /* 3. ensure status code is an HTTP code */
 
 app.listen(3000, function(err){
-  if(err){ console.log('HERE'); }
   if(err){ console.error(error(err.message)); }
   else{ console.log(info('Server started on port 3000')); }
 });
