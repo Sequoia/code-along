@@ -5,7 +5,7 @@ function createRecords(Restaurant, Dish){
   return Promise.map(getRestaurants(), function(obj){
     return Restaurant.create(obj, { include : [ Dish ] });
   })
-  .then(function(){
+  .tap(function(){
     console.log('Created Restaurants');
   });
 }
