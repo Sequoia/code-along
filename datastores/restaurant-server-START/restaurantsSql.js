@@ -27,6 +27,11 @@ router.get('/', function getList(req, res, next){
   res.render('restaurant_list', {restaurants : dummyData}); //TODO get restaurants from DB
 });
 
+// GET new restaurant form
+router.get('/new', function restaurantForm(req, res, next){
+  res.render('restaurant_form');
+});
+
 // GET single restaurant
 router.get('/:id', function getOne(req, res, next){
   console.log('getting restaurants/' + req.params.id);
@@ -34,11 +39,6 @@ router.get('/:id', function getOne(req, res, next){
   var result = dummyData[0]; //TODO use req.params.id to fetch real DB record
 
   res.render('restaurant_detail', result);
-});
-
-// GET new restaurant form
-router.get('/new', function restaurantForm(req, res, next){
-  res.render('restaurant_form');
 });
 
 // POST new restaurant

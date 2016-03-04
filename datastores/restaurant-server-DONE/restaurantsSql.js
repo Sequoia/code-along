@@ -30,24 +30,21 @@ router.get('/', function getList(req, res, next){
     });
 });
 
+// GET new restaurant form
+// Must come before `/:id` or router will think `new` is an ID
+router.get('/new', function restaurantForm(req, res, next){
+  res.render('restaurant_form');
+});
+
+
 // GET single restaurant
 router.get('/:id', function getOne(req, res, next){
   console.log('getting restaurants/' + req.params.id);
 
-  Restaurant
-    .find({
-      where: {id : req.params.id},
-      include: [ Dish ]
-    })
-    .then(function(result){
-      console.log(result.dishes);
-      res.render('restaurant_detail', result);
+  Restaurant.findById(req.params.id, { include : [ Dish ] })
+    .then(function(result){ 
+      res.render('restaurant_detail', result.toJSON());
     });
-});
-
-// GET new restaurant form
-router.get('/new', function restaurantForm(req, res, next){
-  res.render('restaurant_form');
 });
 
 // POST new restaurant
