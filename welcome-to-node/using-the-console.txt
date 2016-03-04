@@ -1,0 +1,7 @@
+Here are some statements to run in the console:
+
+var numbers = [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100];
+
+function decode(number){ return String.fromCharCode(number); }
+
+numbers.map(decode).join('');
