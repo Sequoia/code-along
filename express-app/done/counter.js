@@ -30,5 +30,5 @@ function handleGreet(req, res) {
 }
 
 server.listen(port, function(){
-  console.log('server listening on port ' + port);
+  console.log('server listening http://localhost:' + port);
 });

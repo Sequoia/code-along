@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Amici's",
+    "founded": 2010,
+    "id": 1
+  },
+  {
+    "name": "Taco Gong",
+    "founded": 2011,
+    "id": 2
+  },
+  {
+    "name": "Unfriendly's",
+    "founded": 1999,
+    "id": 3
+  },
+  {
+    "name": "Shake Hovel",
+    "founded": 2001,
+    "id": 4
+  },
+  {
+    "name": "Grey Castle",
+    "founded": 1920,
+    "id": 5
+  }
+]
