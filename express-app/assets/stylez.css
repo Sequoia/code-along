@@ -1,0 +1,22 @@
+body{
+  padding:1em 20%;
+}
+h1{
+  font-weight:900;
+  background:lavenderblush;
+  padding:15px;
+  font-family:sans-serif;
+  border-left:solid 1em lightblue;
+}
+
+h2{
+  font-style:oblique;
+  clear:both;
+  margin-top:2em;
+}
+
+img{
+  width:30%;
+  float:left;
+  padding: 0 1em 1em 0;
+}
