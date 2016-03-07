@@ -8,6 +8,8 @@ var restaurants = require('../restaurants.json');
 router.use(bodyparser.json());
 
 router.get('/:id', function(req, res){
+  //TODO update to use template engine
+  //TODO create `restuarant.jade` template
   res.json(findById(restaurants, req.params.id));
 });
 

@@ -8,7 +8,7 @@ var restaurants = require('../restaurants.json');
 router.use(bodyparser.json());
 
 router.get('/:id', function(req, res){
-  res.json(findById(restaurants, req.params.id));
+  res.render('restaurant', findById(restaurants, req.params.id));
 });
 
 router.get('/', function(req, res){
@@ -19,3 +19,4 @@ router.post('/', function(req, res){
   restaurants.push(req.body);
   res.json(restaurants);
 });
+
